@@ -1,3 +1,15 @@
-<p>
-  recipe-link works!
-</p>
+<div class="row">
+  <a href="#" class="list-group-item clearfix">
+    <div class="pull-left col-xs-8">
+      <h4 class="list-group-item-heading">
+          {{ recipe.name }}
+      </h4>
+      <p class="list-group-item-text">
+        {{ recipe.description }}
+      </p>
+    </div>
+    <div class="pull-left col-xs-4">
+      <img [src]="recipe.imagePath" [alt]="recipe.name" class="img-responsive pull-right" style="max-height: 50px">
+    </div>
+  </a>
+</div>
