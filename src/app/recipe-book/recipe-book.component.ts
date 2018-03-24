@@ -8,14 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeBookComponent implements OnInit {
   recipes: Recipe[] = [
-    new Recipe('Test Recipe', 'This is simply a test', 'assets/images/frying-pan-pizza.jpg'),
-    new Recipe('Test Recipe', 'This is simply a test', 'assets/images/frying-pan-pizza.jpg'),
-    new Recipe('Test Recipe', 'This is simply a test', 'assets/images/frying-pan-pizza.jpg')
   ];
+  detailRecipe: Recipe;
 
   constructor() { }
 
   ngOnInit() {
+    console.log('RECIPE BOOK INITIALIZED');
   }
 
+  addRecipe() {
+    this.recipes.push(new Recipe('Test Recipe', 'This is simply a test', 'assets/images/frying-pan-pizza.jpg'));
+  }
+
+  setRecipeDetail(detailRecipe: Recipe) {
+    this.detailRecipe = detailRecipe;
+  }
 }

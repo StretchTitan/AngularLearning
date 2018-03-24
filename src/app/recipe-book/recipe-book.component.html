@@ -2,18 +2,21 @@
   <div class="col-md-5">
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-success">New Recipe</button>
+        <button class="btn btn-success" (click)="addRecipe()">New Recipe</button>
       </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-xs-12">
-          <app-recipe-link *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-link>
+          <app-recipe-link *ngFor="let recipe of recipes" [recipe]="recipe" (selectedRecipe)="setRecipeDetail($event)"></app-recipe-link>
         </div>
     </div>
   </div>
   <div class="col-md-7">
-    <app-recipe></app-recipe>
+    <app-recipe [recipe]="detailRecipe" *ngIf="detailRecipe; else noRecipeText"></app-recipe>
+    <ng-template #noRecipeText>
+      <p>Select a recipe to see the detail</p>
+    </ng-template>
   </div>
 </div>
 
