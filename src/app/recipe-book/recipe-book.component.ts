@@ -1,5 +1,7 @@
+import { RecipeService } from './recipe.service';
 import { Recipe } from './recipe.model';
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
 
 @Component({
   selector: 'app-recipe-book',
@@ -7,21 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-book.component.css']
 })
 export class RecipeBookComponent implements OnInit {
-  recipes: Recipe[] = [
-  ];
-  detailRecipe: Recipe;
+  recipes: Recipe[];
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    console.log('RECIPE BOOK INITIALIZED');
+    this.recipes = this.recipeService.getRecipes();
+    this.recipeService.recipesChanged.subscribe((recipes: Recipe[]) => this.recipes = recipes);
   }
 
   addRecipe() {
-    this.recipes.push(new Recipe('Test Recipe', 'This is simply a test', 'assets/images/frying-pan-pizza.jpg'));
-  }
-
-  setRecipeDetail(detailRecipe: Recipe) {
-    this.detailRecipe = detailRecipe;
+    this.recipeService.addRecipe(
+      new Recipe(
+        'Test Recipe',
+        'This is simply a test',
+        'assets/images/frying-pan-pizza.jpg',
+        [
+          new Ingredient('butter', 1),
+          new Ingredient('flour', 4),
+          new Ingredient('cheese', 3),
+          new Ingredient('sauce', 2)
+        ]
+      )
+    );
   }
 }

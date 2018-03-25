@@ -8,15 +8,12 @@
     <hr>
     <div class="row">
         <div class="col-xs-12">
-          <app-recipe-link *ngFor="let recipe of recipes" [recipe]="recipe" (selectedRecipe)="setRecipeDetail($event)"></app-recipe-link>
+          <app-recipe-link *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-link>
         </div>
     </div>
   </div>
   <div class="col-md-7">
-    <app-recipe [recipe]="detailRecipe" *ngIf="detailRecipe; else noRecipeText"></app-recipe>
-    <ng-template #noRecipeText>
-      <p>Select a recipe to see the detail</p>
-    </ng-template>
+    <app-recipe></app-recipe>
   </div>
 </div>
 
