@@ -15,9 +15,4 @@ export class RecipeLinkComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  selectRecipe() {
-    this.recipeService.detailRecipe.emit(this.recipe);
-  }
-
 }
