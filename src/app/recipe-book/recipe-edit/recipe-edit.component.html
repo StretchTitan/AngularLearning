@@ -10,20 +10,10 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group" appDropdown>
-      <button class="btn btn-primary dropdown-toggle">Manage Recipe <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a (click)="addToShoppingList()">Add to Shopping List</a></li>
-        <li><a routerLink="edit">Edit Recipe</a></li>
-        <li><a>Delete Recipe</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <p>{{ recipe.name }}</p>
-    <p>{{ recipe.description }}</p>
+    <label for="name">Name</label>
+    <input type="text" id="name" class="form-control" [value]="recipe.name">
+    <label for="name">Descripton</label>
+    <input type="text" id="name" class="form-control" [value]="recipe.description">
   </div>
 </div>
 <div class="row">
@@ -34,4 +24,3 @@
     </ul>
   </div>
 </div>
-

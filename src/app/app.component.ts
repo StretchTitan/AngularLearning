@@ -6,12 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  isRecipies = true;
-  isShopping = false;
 
-  setView(view) {
-    this.isRecipies = view === 'recipies';
-    this.isShopping = view === 'shopping';
-  }
 }

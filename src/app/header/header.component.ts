@@ -6,14 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() viewClicked = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  setView(view: string) {
-    this.viewClicked.emit(view);
   }
 }

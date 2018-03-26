@@ -14,6 +14,9 @@ import { ShoppingListItemComponent } from './shopping-list/shopping-list-item/sh
 import { RecipeComponent } from './recipe-book/recipe/recipe.component';
 import { RecipeLinkComponent } from './recipe-book/recipe-link/recipe-link.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -25,12 +28,15 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ShoppingListItemComponent,
     RecipeComponent,
     RecipeLinkComponent,
-    DropdownDirective
+    DropdownDirective,
+    PageNotFoundComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     ShoppingListService,

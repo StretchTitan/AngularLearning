@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecipeLinkComponent implements OnInit {
   @Input() recipe: Recipe;
+  @Input() key: number;
 
   constructor(private recipeService: RecipeService) { }
 

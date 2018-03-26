@@ -2,18 +2,18 @@
   <div class="col-md-5">
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-success" (click)="addRecipe()">New Recipe</button>
+        <button class="btn btn-success" routerLink="new">New Recipe</button>
       </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-xs-12">
-          <app-recipe-link *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-link>
+          <app-recipe-link *ngFor="let recipe of recipes; let key = index" [recipe]="recipe" [key]="key"></app-recipe-link>
         </div>
     </div>
   </div>
   <div class="col-md-7">
-    <app-recipe></app-recipe>
+    <router-outlet></router-outlet>
   </div>
 </div>
 
