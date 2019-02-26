@@ -1,3 +1,12 @@
-<p>
-  note-section-row works!
-</p>
+<div class="note_row">
+  <div class="note_row--title_button_container">
+    <p>{{ row.title }}</p>
+    <div class="note_row--actions_container">
+      <div *ngFor="let button of row.buttons; let i = index" class="note_row--button" [ngClass]="{'is-selected': button.selected}" (click)="onSelectButton(i)">{{ button.title }}</div>
+      <div class="note_row--comment_button" *ngIf="row.hasComment" (click)="onCommentToggle()">C</div>
+    </div>
+  </div>
+  <div *ngIf="row.hasComment" class="note_row--comment" [ngClass]="{'is-active': commentExpanded}">
+    <app-comment></app-comment>
+  </div>
+</div>

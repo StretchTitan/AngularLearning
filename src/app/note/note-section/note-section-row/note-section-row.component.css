@@ -1,0 +1,39 @@
+.note_row {
+  display: flex;
+  flex-direction: column;
+}
+
+.note_row--title_button_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note_row--actions_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.note_row--comment_button {
+  margin-left:8px;
+}
+
+.note_row--comment {
+  display: none;
+}
+
+.note_row--comment.is-active {
+  display: flex;
+}
+
+.note_row--button {
+  padding: 1px 10px;
+  background: #cfcfcf;
+  border-radius: 12px;
+}
+
+.note_row--button.is-selected {
+  background: #0069B1;
+}

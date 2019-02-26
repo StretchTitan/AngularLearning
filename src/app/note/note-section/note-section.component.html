@@ -1,4 +1,5 @@
 <div>
-  <app-note-header></app-note-header>
-  <app-note-row *ngFor="let row of section.rows" [row]="row"></app-note-row>
+  <app-note-section-header [sectionHeader]="section.sectionHeader"></app-note-section-header>
+  <app-note-section-row *ngFor="let row of section.sectionRows; let i = index" [row]="row" [sectionIndex]="sectionIndex" [rowIndex]="i"></app-note-section-row>
+  <app-comment *ngIf="section.sectionComment"></app-comment>
 </div>

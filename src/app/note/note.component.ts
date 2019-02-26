@@ -1,35 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NoteService } from './note.service';
+import { NoteSection } from './note-section/note-section.model';
 
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.css']
+  styleUrls: ['./note.component.css'],
+  providers: [NoteService]
 })
-export class NoteComponent implements OnInit {
+export class NoteComponent implements OnInit, OnDestroy {
 
-  noteSections = [{
-    title: 'Section 1',
-    rows: [{
-      title: 'Row 1'
-    }, {
-      title: 'Row 2'
-    }, {
-      title: 'Row 3'
-    }, {
-      title: 'Row 4'
-    }],
-  }, {
-    title: 'Section 2',
-    rows: [{
-      title: 'Row 1'
-    }, {
-      title: 'Row 2'
-    }],
-  }];
+  noteSubscription: Subscription;
+  noteSections: NoteSection[];
 
-  constructor() { }
+  constructor(private noteService: NoteService) { }
 
   ngOnInit() {
+    this.noteSections = this.noteService.getNote();
+    this.noteSubscription = this.noteService.noteChanged.subscribe(note => this.noteSections = note);
   }
 
+  ngOnDestroy(): void {
+    this.noteSubscription.unsubscribe();
+  }
 }

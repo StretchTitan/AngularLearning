@@ -1,6 +1,8 @@
 export class NoteSectionRow {
-  rowTitle: string;
-  rowButtons: [{
-    rowButtonTitle: string
+  title: string;
+  buttons?: [{
+    title: string,
+    selected: boolean,
   }];
+  hasComment: boolean;
 }
