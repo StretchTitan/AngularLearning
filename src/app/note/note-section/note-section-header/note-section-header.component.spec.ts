@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoteRowComponent } from './note-row.component';
+import { NoteSectionHeaderComponent } from './note-section-header.component';
 
-describe('NoteRowComponent', () => {
-  let component: NoteRowComponent;
-  let fixture: ComponentFixture<NoteRowComponent>;
+describe('NoteSectionHeaderComponent', () => {
+  let component: NoteSectionHeaderComponent;
+  let fixture: ComponentFixture<NoteSectionHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoteRowComponent ]
+      declarations: [ NoteSectionHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NoteRowComponent);
+    fixture = TestBed.createComponent(NoteSectionHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,17 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteComponent implements OnInit {
 
-  constructor() { }
-
-  rowItems: any = [{
-    title: 'Row 1'
+  noteSections = [{
+    title: 'Section 1',
+    rows: [{
+      title: 'Row 1'
+    }, {
+      title: 'Row 2'
+    }, {
+      title: 'Row 3'
+    }, {
+      title: 'Row 4'
+    }],
   }, {
-    title: 'Row 2'
-  }, {
-    title: 'Row 3'
-  }, {
-    title: 'Row 4'
+    title: 'Section 2',
+    rows: [{
+      title: 'Row 1'
+    }, {
+      title: 'Row 2'
+    }],
   }];
+
+  constructor() { }
 
   ngOnInit() {
   }
